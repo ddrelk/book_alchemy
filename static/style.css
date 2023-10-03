@@ -1,32 +1,69 @@
-/* Error Box Styling */
-.error-box {
-    font-size: 16px;
-    border: 1px solid #8cb3d9; /* Set border color to match the banner */
-    border-radius: 20px; /* Make the edges rounder */
-    padding: 20px; /* Add padding to the form box */
-    background-color: #f7f7f7; /* Add background color */
-    margin: 3px;
+/* Reset some default styles for better consistency */
+body, h1, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Overall page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     text-align: center;
 }
 
-/* Banner Styling */
-.banner {
-    text-align: center;
-    background-color: #8cb3d9;
-    padding: 10px;
-    margin: 3px;
+/* Form container styles */
+div {
+    background-color: #fff;
+    padding: 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
 }
 
-.banner h1 {
-    font-family: 'Arial', sans-serif;
-    color: #FFFFFF;
-    margin: 3px;
+/* Form label styles */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* Float the buttons to the right side */
-.action-buttons {
-    text-align: right;
-    margin: 3px;
+/* Form input styles */
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Form submit button styles */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styles */
+.error {
+    color: #dc3545;
+    margin-top: 10px;
+}
+
+/* Success message styles */
+.success {
+    color: #28a745;
+    margin-top: 10px;
 }

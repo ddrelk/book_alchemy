@@ -1,0 +1,120 @@
+/* Reset some default styles for better consistency */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Overall page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Header styles */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007BFF;
+}
+
+/* Banner styles */
+.banner {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+}
+
+.banner h1 {
+    font-size: 36px;
+}
+
+/* Error message styles */
+.error-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.error-box p {
+    font-size: 18px;
+    color: #8cb3d9;
+}
+
+/* Form box styles */
+.form-box {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Book grid styles */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.book-item {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.book-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.book-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.book-author {
+    color: #555;
+}
+
+.book-cover {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Delete button style */
+button[type="submit"] {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+}
