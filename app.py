@@ -17,13 +17,25 @@ db.init_app(app)
 
 @app.route('/add_author', methods=['GET', 'POST'])
 def add_author():
+    """
+        Handle the addition of a new author via a web form.
+
+        This function handles both GET and POST requests. When a GET request is made,
+        it renders the 'add_author.html' template with a form to input author details.
+        When a POST request is made (form submission), it validates the input data,
+        creates a new Author object, and adds it to the database if the data is valid.
+
+        Returns:
+            str: A rendered HTML page with success or error messages.
+
+        """
     if request.method == 'POST':
         author_name = request.form.get('name')
         birth = request.form.get('birth_date')
         death_date = request.form.get('date_of_death')
 
         if not author_name or not birth:
-            # Handle missing name or birth date
+            # Handle missing name or birthdate
             error_message = 'Please provide both name and birth date.'
             return render_template('add_author.html', error_message=error_message)
 
@@ -57,6 +69,18 @@ def add_author():
 
 @app.route('/add_book', methods=['GET', 'POST'])
 def add_book():
+    """
+        Handle the addition of a new book via a web form.
+
+        This function handles both GET and POST requests. When a GET request is made,
+        it retrieves a list of authors from the database and renders the 'add_book.html'
+        template with a form to input book details. When a POST request is made (form submission),
+        it validates the input data, creates a new Book object, and adds it to the database if the data is valid.
+
+        Returns:
+            str: A rendered HTML page with success or error messages.
+
+        """
     authors = Author.query.all()
 
     if request.method == 'POST':
@@ -93,6 +117,18 @@ def add_book():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
+    """
+        Display a list of books with optional sorting and search functionality.
+
+        This function handles both GET and POST requests. When a GET request is made,
+        it retrieves a sorting parameter from the URL and a search query (if provided),
+        then displays a list of books accordingly. When a POST request is made (e.g., form submission),
+        it allows users to perform a search query and updates the book list accordingly.
+
+        Returns:
+            str: A rendered HTML page displaying a list of books based on sorting and search criteria.
+
+        """
     # Get the sorting parameter from the form or use a default value
     sort_by = request.args.get('sort', default='title')
     search_query = request.form.get('search_query', default='')
@@ -127,6 +163,20 @@ def home():
 
 @app.route('/book/<int:book_id>/delete', methods=['POST'])
 def delete_book(book_id):
+    """
+        Delete a book and its author (if no other books by the same author exist).
+
+        This function handles a POST request to delete a specific book by its ID. It also checks
+        if the author of the deleted book has any other books in the library. If the author has
+        no other books, the author is deleted as well.
+
+        Args:
+            book_id (int): The ID of the book to be deleted.
+
+        Returns:
+            str: A redirection to the 'home' route after deleting the book and possibly the author.
+
+        """
     if request.method == 'POST':
         book = Book.query.get_or_404(book_id)
         if not book:
