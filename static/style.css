@@ -1,47 +1,103 @@
-/* Reset some default styles for better consistency */
-body, h1, p, ul, li, form {
-    margin: 0;
-    padding: 0;
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Overall page styles */
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 20px;
 }
 
 /* Form container styles */
 div {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
 }
 
-/* Form label styles */
+/* Form header styles */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Label and input field styles */
 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
 }
 
-/* Form input styles */
 input[type="text"],
 input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-/* Form submit button styles */
+/* Submit button styles */
 input[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Error and success message styles */
+.error,
+.success {
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+}
+
+.error {
+  background-color: #ff6b6b;
+}
+
+.success {
+  background-color: #4CAF50;
+}
+
+/* Additional styles for labels and input fields */
+.label-style {
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.input-style {
+  border: 1px solid #007BFF;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+button {
     background-color: #007BFF;
     color: #fff;
     border: none;
@@ -50,20 +106,4 @@ input[type="submit"] {
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.2s ease-in-out;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Error message styles */
-.error {
-    color: #dc3545;
-    margin-top: 10px;
-}
-
-/* Success message styles */
-.success {
-    color: #28a745;
-    margin-top: 10px;
 }

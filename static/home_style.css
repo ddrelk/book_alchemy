@@ -14,10 +14,11 @@ body {
 
 /* Header styles */
 h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #007BFF;
+  font-size: 58px;
+  font-weight: bold; /* Make the text bold */
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007BFF; /* Keep the blue color */
 }
 
 /* Banner styles */
@@ -46,9 +47,24 @@ h1 {
     color: #8cb3d9;
 }
 
-/* Form box styles */
+/* Styles for the form container */
+.form-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap forms to the next line if there's not enough space */
+    justify-content: flex-start; /* Align forms to the left */
+}
+
+/* Styles for individual form boxes */
 .form-box {
-    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    margin-right: 20px; /* Add some spacing between forms (adjust as needed) */
+    margin-bottom: 20px; /* Add spacing at the bottom of each form */
+    flex: 1; /* Distribute available space evenly among forms */
+    max-width: 200px; /* Limit the maximum width of each form */
 }
 
 button {
@@ -60,6 +76,7 @@ button {
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.2s ease-in-out;
+    margin-top: 20px;
 }
 
 button:hover {
@@ -75,6 +92,7 @@ button:hover {
     padding: 0;
 }
 
+/* Styles for individual book items */
 .book-item {
     background-color: #fff;
     border-radius: 5px;
@@ -83,33 +101,40 @@ button:hover {
     transition: transform 0.2s ease-in-out;
 }
 
+/* Hover effect on book items */
 .book-item:hover {
     transform: scale(1.05);
 }
 
+/* Styles for book details */
 .book-details {
     padding: 20px;
     text-align: center;
 }
 
+/* Styles for the book title */
 .book-title {
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
+/* Styles for the book author */
 .book-author {
     color: #555;
 }
 
+/* Styles for the book cover image */
 .book-cover {
     max-width: 100%;
+    max-height: 200px; /* Adjust the max height to your preference */
+    width: auto;
     height: auto;
 }
 
 /* Delete button style */
 button[type="submit"] {
-    background-color: #dc3545;
+    background-color: #007BFF;
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -117,4 +142,36 @@ button[type="submit"] {
     cursor: pointer;
     margin: 10px auto;
     display: block;
+}
+
+/* Styles for the custom button */
+.custom-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease-in-out;
+    width: 70%; /* Set a consistent width for the button */
+    margin-top: 10px; /* Adjust margin-top to position the button consistently */
+}
+
+/* Styles for the search label */
+.search-label {
+    /* Add your specific styling for the "Search books" label here */
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+}
+
+/* Styles for the sort label */
+.sort-label {
+    /* Add your specific styling for the "Sort by" label here */
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
 }

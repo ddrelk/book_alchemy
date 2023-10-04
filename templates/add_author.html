@@ -9,16 +9,18 @@
 <body>
 <div>
     <form action="/add_author" method="POST">
-        <label for="name">Author Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <h1 class="form-header">Add Author</h1>
 
-        <label for="birth_date">Birthdate:</label>
-        <input type="date" id="birth_date" name="birth_date" required><br><br>
+        <label for="name" class="label-style">Author Name:</label>
+        <input type="text" id="name" name="name" class="input-style" required><br><br>
 
-        <label for="date_of_death">Date of Death:</label>
-        <input type="date" id="date_of_death" name="date_of_death"><br><br>
+        <label for="birth_date" class="label-style">Birthdate:</label>
+        <input type="date" id="birth_date" name="birth_date" class="input-style" required><br><br>
 
-        <input type="submit" value="Add Author">
+        <label for="date_of_death" class="label-style">Date of Death:</label>
+        <input type="date" id="date_of_death" name="date_of_death" class="input-style"><br><br>
+
+        <input type="submit" value="Add Author" class="input-style">
     </form>
 
     {% if error_message %}
@@ -29,5 +31,9 @@
     <div class="success">{{ message }}</div>
     {% endif %}
 </div>
+    <div>
+        <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+        <button onclick="window.location.href='{{ url_for('add_book') }}'">Add Book</button>
+    </div>
 </body>
 </html>

@@ -10,21 +10,21 @@
   <body>
       <h1>List of Books</h1>
 
-      <div class="form-box">
-        <!-- Search Form -->
-        <form action="/home" method="post">
-            <label for="search_query" class="search-label">Search books:</label>
-            <input type="text" id="search_query" name="search_query" placeholder="Search books...">
-            <button type="submit" class="big-button search-button">Search</button>
-        </form>
+      <div class="form-container">
+    <!-- Search Form -->
+    <form action="/home" method="post" class="form-box">
+        <label for="search_query" class="search-label">Search books:</label>
+        <input type="text" id="search_query" name="search_query" placeholder="Search books...">
+        <button type="submit" class="custom-button">Search</button>
+    </form>
 
-      <form action="/home" method="GET">
-        <label for="sort">Sort by:</label>
+    <form action="/home" method="GET" class="form-box">
+        <label for="sort" class="sort-label">Sort by:</label>
         <select name="sort" id="sort">
             <option value="title">Title</option>
             <option value="author">Author</option>
         </select>
-        <button type="submit">Sort</button>
+        <button type="submit" class="custom-button">Sort</button>
     </form>
       </div>
     <ul class="book-grid">
@@ -42,6 +42,9 @@
         </li>
     {% endfor %}
 </ul>
-
+    <div>
+        <button onclick="window.location.href='{{ url_for('add_book') }}'">Add Book</button>
+        <button onclick="window.location.href='{{ url_for('add_author') }}'">Add Author</button>
+    </div>
   </body>
 </html>
